@@ -3,7 +3,7 @@ js-combinatorics
 
 A javascript combinatorics library. Right now, it provides just the following utility:
 
-`util.processCombinations(array, process, minCombLen, maxCombLen)`
+`combinatorics.processCombinations(array, process, minCombLen, maxCombLen)`
 
 *A generator of combinations of an array's elements*
 
@@ -19,7 +19,7 @@ A javascript combinatorics library. Right now, it provides just the following ut
 	// Let's calculate how many unique first hands there are (it should be 2,598,960)
 	var count = 0,
 		sdate = new Date();
-	util.processCombinations(deck, function(combination){count += 1;}, 5, 5);
+	combinatorics.processCombinations(deck, function(combination){count += 1;}, 5, 5);
 	// Notice that I'm simply counting, but I could be processing the combinations in any other way
 	console.log(count + ' combinations processed in ' + (new Date() - sdate)/1000 + ' seconds');
 	>> 2598960 combinations processed in 0.371 seconds
@@ -28,13 +28,13 @@ A javascript combinatorics library. Right now, it provides just the following ut
 	// different outcomes there can be (it should be 1,729,647, +1 if you count the option of not discarding)
 	count = 0;
 	sdate = new Date();
-	util.processCombinations(deck.slice(5), function(combination){count += 1;}, 1, 5);
+	combinatorics.processCombinations(deck.slice(5), function(combination){count += 1;}, 1, 5);
 	// Notice that I'm simply counting, but I could be processing the combinations in any other way
 	console.log(count + ' combinations processed in ' + (new Date() - sdate)/1000 + ' seconds');
 	>> 1729647 combinations processed in 0.232 seconds
 
 	// A simple example
-	processCombinations([1,2,3,4], function(combination){console.log(combination)});
+	combinatorics.processCombinations([1,2,3,4], function(combination){console.log(combination)});
 	>> [1]
 	>> [2]
 	>> [3]
